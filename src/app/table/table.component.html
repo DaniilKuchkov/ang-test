@@ -73,8 +73,12 @@
         totalItems: totalCount
         };
          let i = index"
-            (click)="addListItemToChecked(row)"
         >
+          <app-table-checkbox
+            *ngIf="withCheckBox"
+            [tableItem]="row"
+            (addListItemToChecked)="addListItemToChecked($event)"
+          ></app-table-checkbox>
 					<td *ngFor="let tdContent of row | keys">{{tdContent.value}}</td>
 				</tr>
 				</tbody>

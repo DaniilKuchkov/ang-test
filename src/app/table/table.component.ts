@@ -58,8 +58,12 @@ export class TableComponent implements OnInit {
   }
 
   addListItemToChecked(listItem) {
-    if (this.checkedListItems.indexOf(listItem) === -1) {
+    const index = this.checkedListItems.indexOf(listItem);
+    if (index === -1) {
       this.checkedListItems.push(listItem);
+    }
+    if (index > -1) {
+      this.checkedListItems.splice(index, 1);
     }
     console.log(this.checkedListItems);
   }
