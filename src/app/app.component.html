@@ -1,6 +1,18 @@
 <div>
-  <app-table-component [tableRowListUrl]="firstTableUrl"></app-table-component>
-  <app-table-component [tableRowListUrl]="secondTableUrl"
-                       [withCheckBox]="true"></app-table-component>
+  <app-table-component [tableRowListUrl]="authUsers"
+                       [withCheckBox]="true"
+                       (sentToParent)="getChildList($event)"
+                       [updateTableList]="updateTable"
+  >
+
+  </app-table-component>
+  <button (click)="addToAvaliableUsers(authUsers)">Delete from auth</button>
+  <app-table-component [tableRowListUrl]="avaliableUsers"
+                       [withCheckBox]="true"
+                       (sentToParent)="getChildList($event)"
+                       [updateTableList]="updateTable"
+  >
+  </app-table-component>
+  <button (click)="addToAuthUsers(avaliableUsers)">Add to Auth</button>
 </div>
 

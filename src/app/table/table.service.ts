@@ -8,20 +8,31 @@ import 'rxjs/add/observable/throw';
 
 @Injectable()
 export class TableService {
-  apiUrl = 'http://opentable.herokuapp.com/api/';
+  apiUrl = 'http://localhost:9099/';
+
   constructor(private http: Http) {
   }
-  addItemToTable(url, itemArr) {
+  addItemToTable(url, itemArr, all = false) {
     const headers = new Headers({'Content-Type' : 'application/json'});
-    const options = new RequestOptions( {headers} );
-    return this.http.post(this.apiUrl + url, itemArr, options)
+
+    const params = {
+      list: '' + itemArr.map(item => item.id),
+      all: all
+    };
+
+    const options = new RequestOptions( {headers, params} );
+    return this.http.post(this.apiUrl + url, null, options)
       .map(res => {
       return res.json().data;
     });
   }
-  removeItemFromTable(url, itemArr) {
+  removeItemFromTable(url, itemArr, all= false) {
     const headers = new Headers({'Content-Type' : 'application/json'});
-    const options = new RequestOptions( {headers} );
+    const params = {
+      list: '' + itemArr.map(item => item.id),
+      all: all
+    };
+    const options = new RequestOptions( {headers, params} );
     return this.http.delete(this.apiUrl + url, options)
       .map(res => {
         return res.json().data;

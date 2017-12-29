@@ -44,6 +44,7 @@
 			>
 				<thead>
 				<tr>
+          <th *ngIf="withCheckBox">Add</th>
 					<th
 						class="sorting_asc id-table-header"
 						*ngFor="let tHeader of thList; let i = index"
@@ -59,6 +60,7 @@
 				</thead>
 				<tfoot>
 				<tr>
+          <th *ngIf="withCheckBox">Add</th>
 					<th 	*ngFor="let thFooter of thList; let i = index"
 							[ngClass]="{ 'text-right': i === thList.length-1}"
 							>

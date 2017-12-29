@@ -10,7 +10,6 @@ export class TableCheckboxComponent implements OnInit {
   @Input() tableItem;
   checked: boolean;
   constructor() { }
-
   ngOnInit() {
   }
   onCheck() {
