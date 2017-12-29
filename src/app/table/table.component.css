@@ -1,0 +1,45 @@
+.dataTables_length label {
+	font-weight: normal;
+	text-align: left;
+	white-space: nowrap;
+}
+.dataTables_length .form-group {
+	display: inline-block;
+}
+.dataTables_length select {
+	width: 75px;
+	display: inline-block;
+}
+.dataTables_filter {
+	text-align: right;
+}
+.data-table-pagination /deep/ .pagination-next, .data-table-pagination /deep/ .pagination-previous{
+	text-transform: uppercase;
+}
+.data-table-pagination /deep/ .ngx-pagination a{
+	color: #777;
+	border-radius: 10px;
+	transition: .3s;
+}
+.data-table-pagination /deep/ .ngx-pagination a:hover{
+	background: #e6e6e6;
+}
+.data-table-pagination /deep/ li {
+	color: #FFFFFF;
+	border-radius: 30px !important;
+	transition: all .3s;
+	padding: 0px 11px;
+	height: 30px;
+	line-height: 30px;
+}
+.data-table-pagination /deep/ .current {
+	background-color: #a71930;
+	border-color: #a71930;
+	box-shadow: 0 4px 5px 0 rgba(156, 39, 176, 0.14), 0 1px 10px 0 rgba(156, 39, 176, 0.12), 0 2px 4px -1px rgba(156, 39, 176, 0.2);
+}
+.data-table-pagination /deep/ li a span{
+	color: #999;
+}
+.edit-icon{
+	color: #9C27B0;
+}
